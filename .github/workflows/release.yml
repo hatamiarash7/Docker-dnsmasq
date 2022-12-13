@@ -52,5 +52,5 @@ jobs:
 
       - name: Push to Github
         run: |
-          docker login -u {{ github.actor }} -p "${{ secrets.GITHUB_TOKEN }}" ghcr.io
+          docker login -u {{ github.actor }} -p "${{ secrets.GH_TOKEN }}" ghcr.io
           docker push ${{ steps.github-image.outputs.lowercase }}
