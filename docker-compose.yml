@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  dnsmasq:
+    image: hatamiarash7/dnsmasq:latest
+    container_name: dnsmasq
+    restart: always
+    ports:
+      - 53:53/udp
+      - 8080:8080
+    environment:
+      - HTTP_USER=admin
+      - HTTP_PASS=admin
+    volumes:
+      - ./dnsmasq.conf:/etc/dnsmasq.conf
